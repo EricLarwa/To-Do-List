@@ -69,8 +69,8 @@ const TaskInput = () => {
           </svg>
         </motion.button>
         <div>
-            <h2>Submitted Tasks:</h2>
-            <ul>
+            <h2>Tasks:</h2>
+            <ul className="task">
             {tasks.map((task, index) => (
                 <li key={index}>
                 <input
@@ -81,7 +81,7 @@ const TaskInput = () => {
                 <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
                     {task.name}
                 </span>
-                <button onClick={() => handleRemoveTask(index, false)}>x</button>
+                <button className="remove" onClick={() => handleRemoveTask(index, false)}>x</button>
                 </li>
             ))}
             </ul>

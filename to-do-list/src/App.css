@@ -74,3 +74,13 @@ form .button-container {
   height: 25px;
   width: 25px;
 }
+
+form .task {
+  list-style-type: none;
+}
+
+form .remove {
+  margin: 2px;
+  padding-left: 5px;
+  border-style: none;
+}
