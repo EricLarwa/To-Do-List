@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital@0;1&display=swap');
+
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  background-color: 12121212 !important;
+  color: #000 !important;
+  font-family: 'Jost', sans-serif;
+}
+
+@media (min-width:1700px) {
+	main .container {
+		max-width: 100%;
+		padding: 0 150px;
+	}
+}
+
+.navbar {
+  padding: 0px;
+  margin: 0;
+
+}
+
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #333;
+  align-items: center;
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+}
+.navbar .item {
+  width: 40px;
+  height: 40px;
+  background:rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.navbar .button-container {
+  background-color: transparent;
+  border: none;
+}
+
+/*** Input CSS ***/
+
+form {
+  padding: 5px;
+  margin: 5px;
+}
+
+
+form input {
+  border-radius: 5px;
+}
+
+form .button-container {
+  padding: 0px;
+  margin: 10px;
+  height: 25px;
+  width: 25px;
+}
