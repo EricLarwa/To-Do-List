@@ -4,6 +4,7 @@ import {motion} from 'framer-motion';
 const TaskInput = () => {
     const [taskName, setTaskName] = useState('');
     const [tasks, setTasks] = useState([]);
+    const [completedTasks, setCompletedTasks] = useState([]);
   
     const handleChange = (event) => {
       setTaskName(event.target.value);
@@ -24,7 +25,16 @@ const TaskInput = () => {
           i === index ? { ...task, completed: !task.completed } : task
         );
         setTasks(updatedTasks);
-      };
+        if (updatedTasks[index].completed) {
+            setCompletedTasks([...completedTasks, updatedTasks[index]]);
+            setTasks(updatedTasks.filter((task, i) => i !== index));
+          } else {
+            setTasks(updatedTasks);
+            setCompletedTasks(
+              completedTasks.filter((task) => task.name !== updatedTasks[index].name)
+            );
+        }; 
+    };
 
     return (
       <form onSubmit={handleSubmit}>
@@ -63,6 +73,16 @@ const TaskInput = () => {
                 <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
                     {task.name}
                 </span>
+                </li>
+            ))}
+            </ul>
+        </div>
+        <div>
+            <h2>Completed Tasks:</h2>
+            <ul>
+            {completedTasks.map((task, index) => (
+                <li key={index}>
+                <span style={{ textDecoration: 'line-through' }}>{task.name}</span>
                 </li>
             ))}
             </ul>
