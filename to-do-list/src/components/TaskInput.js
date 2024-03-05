@@ -36,6 +36,14 @@ const TaskInput = () => {
         }; 
     };
 
+    const handleRemoveTask = (index, isCompleted) => {
+        if (isCompleted) {
+          setCompletedTasks(completedTasks.filter((task, i) => i !== index));
+        } else {
+          setTasks(tasks.filter((task, i) => i !== index));
+        }
+      };
+
     return (
       <form onSubmit={handleSubmit}>
         <input
@@ -73,6 +81,7 @@ const TaskInput = () => {
                 <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
                     {task.name}
                 </span>
+                <button onClick={() => handleRemoveTask(index, false)}>x</button>
                 </li>
             ))}
             </ul>
