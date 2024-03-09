@@ -86,8 +86,12 @@ form .remove {
 }
 
 .footer {
+  position: fixed;
   background-color: #333;
-  color: #333;
-  text-align: center;
-  padding: 3rem;
+  color: #fff;
+  text-align: left;
+  padding: 1rem;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
